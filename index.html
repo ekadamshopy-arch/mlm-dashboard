@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>MLM Dashboard - Ekadam</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box;font-family:system-ui}
+body{background:#f5f7fb;padding:15px}
+.card{background:white;padding:18px;border-radius:14px;margin-bottom:15px;box-shadow:0 2px 8px rgba(0,0,0,0.06)}
+h2{color:#1e1b4b}
+input{width:100%;padding:12px;border:2px solid #e2e8f0;border-radius:10px;margin-top:6px;font-size:16px}
+input:focus{border-color:#6366f1;outline:none}
+.btn{background:#6366f1;color:white;border:none;padding:14px;width:100%;border-radius:10px;font-weight:700;font-size:16px}
+.level{display:flex;justify-content:space-between;padding:12px;background:#f8fafc;border-radius:10px;margin-bottom:8px}
+.total{background:linear-gradient(135deg,#6366f1,#8b5cf6);color:white;padding:20px;border-radius:14px;text-align:center}
+</style>
+</head>
+<body>
+<div class="card">
+<h2>🎯 Commission Edit Madi Mama</h2>
+<p><small>Nimma MLM Plan - Yelli Beko Alli Change Madi</small></p><br>
+Level 1 %<input id="l1" value="10" type="number" oninput="calc()"><br><br>
+Level 2 %<input id="l2" value="5" type="number" oninput="calc()"><br><br>
+Level 3 %<input id="l3" value="3" type="number" oninput="calc()"><br><br>
+Level 4 %<input id="l4" value="2" type="number" oninput="calc()"><br><br>
+Level 5 %<input id="l5" value="1" type="number" oninput="calc()">
+</div>
+<div class="card">
+<h2>💰 Sale Amount</h2>
+<input id="sale" value="1000" type="number" oninput="calc()"><br><br>
+<button class="btn" onclick="calc()">CALCULATE COMMISSION</button>
+</div>
+<div id="result"></div>
+<div class="total"><small>TOTAL COMMISSION</small><h1 id="totalAmt">Rs 210</h1></div>
+<script>
+function calc(){
+let s=parseFloat(document.getElementById('sale').value)||0;
+let a=[1,2,3,4,5].map(i=>parseFloat(document.getElementById('l'+i).value)||0);
+let c=a.map(v=>s*v/100);let tot=c.reduce((x,y)=>x+y,0);
+document.getElementById('result').innerHTML='<div class="card">'+c.map((v,i)=>'<div class="level"><span>Level '+(i+1)+' - '+a[i]+'%</span><b>Rs '+v.toFixed(2)+'</b></div>').join('')+'</div>';
+document.getElementById('totalAmt').innerText='Rs '+tot.toFixed(2);
+}calc();
+</script>
+</body>
+</html>
