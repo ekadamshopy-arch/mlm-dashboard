@@ -1,38 +1,10 @@
 <!DOCTYPE html>
-<html><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>9 Club 5x5 Matrix</title><style>body{background:#0a0a0a;color:#fff;font-family:system-ui;padding:12px}h1{text-align:center;color:#00ff88}.card{background:#151515;border:1px solid #333;border-radius:14px;padding:12px;margin-bottom:12px}input{background:#000;color:#00ff88;border:1px solid #333;border-radius:6px;padding:6px;width:70px;text-align:center}.total{background:#00ff88;color:#000;padding:8px;border-radius:8px;text-align:center;font-weight:bold;margin-top:8px}.grand{background:linear-gradient(135deg,#00ff88,#00ccff);color:#000;padding:16px;border-radius:14px;text-align:center;font-size:22px;font-weight:900;margin-top:18px}</style></head><body><h1>🚀 9 CLUB - 5x5 MATRIX - 155 JANA</h1><p style="text-align:center;color:#aaa">Mama Rate Edit Madi - 5/25/125 Jana Full Lekha</p><div id="grid"></div><div class="grand" id="grand">LOADING...</div><script>
-const defaultClubs=[
-{n:"CLUB 1",r:[0.5,0.25,0.125]},
-{n:"CLUB 2",r:[1,0.5,0.25]},
-{n:"CLUB 3",r:[2,1,0.5]},
-{n:"CLUB 4",r:[3,1.5,0.75]},
-{n:"CLUB 5",r:[5,2.5,1.25]},
-{n:"CLUB 6",r:[8,4,2]},
-{n:"CLUB 7",r:[10,5,2.5]},
-{n:"CLUB 8",r:[15,7.5,3.75]},
-{n:"CLUB 9",r:[20,10,5]}
-];
-function render(){
-let g=document.getElementById('grid');
-g.innerHTML='';
-defaultClubs.forEach((c,i)=>{
-let div=document.createElement('div');
-div.className='card';
-div.innerHTML='<b>'+c.n+' EDIT:</b> L1(5 jana) <input id="r'+i+'0" value="'+c.r[0]+'" oninput="calc()"> L2(25) <input id="r'+i+'1" value="'+c.r[1]+'" oninput="calc()"> L3(125) <input id="r'+i+'2" value="'+c.r[2]+'" oninput="calc()"><div class="total" id="t'+i+'"></div>';
-g.appendChild(div);
-});
-calc();
-}
-function calc(){
-let grand=0;
-defaultClubs.forEach((c,i)=>{
-let r0=parseFloat(document.getElementById('r'+i+'0').value)||0;
-let r1=parseFloat(document.getElementById('r'+i+'1').value)||0;
-let r2=parseFloat(document.getElementById('r'+i+'2').value)||0;
-let tot=5*r0+25*r1+125*r2;
-document.getElementById('t'+i).innerText=c.n+' Full Matrix 155 jana = '+tot.toFixed(2)+' ID';
-grand+=tot;
-});
-document.getElementById('grand').innerText='9 CLUB TOTAL = '+grand.toFixed(2)+' ID = '+grand.toFixed(2)+' Rs MAMA!';
-}
-render();
-</script></body></html>
+<html>
+<head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>9 Club</title></head>
+<body style="margin:0">
+<iframe src="https://ekadamshopy-arch.github.io/mlm-dashboard/full.html" style="width:100%;height:100vh;border:0" id="f"></iframe>
+<script>
+if(location.href.includes('full.html')){document.body.innerHTML=`LOGIN HOME TEAM MYTEAM 9CLUB PROFILE FULL CODE NEEDS TO BE HERE - Wait I will fix`;}
+</script>
+</body>
+</html>
